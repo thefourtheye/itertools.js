@@ -18,4 +18,5 @@ module.exports = {
   starmap: require('./lib/starmap'),
   takewhile: require('./lib/takewhile'),
   tee: require('./lib/tee'),
+  zip_longest: require('./lib/zip_longest')
 };
