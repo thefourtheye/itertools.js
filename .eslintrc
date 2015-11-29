@@ -12,7 +12,8 @@
         "max-len": [2, 80, 4]
     },
     "env": {
-        "node": true
+        "node": true,
+        "mocha": true
     },
     "extends": "eslint:recommended"
 }
