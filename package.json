@@ -4,7 +4,7 @@
   "description": "Python's itertools module for Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node_modules/mocha/bin/mocha tests/**/*.js",
     "lint": "node_modules/eslint/bin/eslint.js **/*.js"
   },
   "repository": {
@@ -23,7 +23,9 @@
     "url": "https://github.com/thefourtheye/itertools.js/issues"
   },
   "homepage": "https://github.com/thefourtheye/itertools.js#readme",
-  "dev-dependencies": {
-    "eslint": "^1.10.2"
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "eslint": "^1.10.2",
+    "mocha": "^2.3.4"
   }
 }
