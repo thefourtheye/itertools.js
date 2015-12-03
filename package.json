@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run lint && node_modules/mocha/bin/mocha tests/**/*.js",
-    "lint": "node_modules/eslint/bin/eslint.js **/*.js",
-    "test-on-ci": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha tests/**/*.js && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "lint": "node_modules/eslint/bin/eslint.js **/*.js"
   },
   "repository": {
     "type": "git",
