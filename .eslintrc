@@ -1,6 +1,9 @@
 {
     "ecmaFeatures": {
-        "arrowFunctions": 2
+        "arrowFunctions": 2,
+        "blockBindings": 2,
+        "forOf": 2,
+        "generators": 2
     },
     "rules": {
         "no-console": 0,
