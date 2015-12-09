@@ -4,8 +4,8 @@
   "description": "Python's itertools module for Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint && node_modules/mocha/bin/mocha tests/**/*.js",
-    "lint": "node_modules/eslint/bin/eslint.js **/*.js"
+    "test": "npm run lint && node_modules/mocha/bin/mocha tests/*.js tests/**/*.js",
+    "lint": "node_modules/eslint/bin/eslint.js index.js lib/**/*.js tests/**/*.js"
   },
   "repository": {
     "type": "git",
