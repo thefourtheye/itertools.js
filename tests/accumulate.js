@@ -12,7 +12,7 @@ describe('[Failure Cases] when accumulate is passed', function() {
   });
 
   it('an invalid iterable (null), it should throw an error', function() {
-    expect(() => accumulate()).to.throw(TypeError, /not a valid iterable object/);
+    expect(() => accumulate(null)).to.throw(TypeError, /not a valid iterable object/);
   });
 
   it('an invalid iterable (number), it should throw an error', function() {
