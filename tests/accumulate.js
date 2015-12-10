@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const accumulate = require('../../').accumulate;
+const accumulate = require('../').accumulate;
 
 describe('[Failure Cases] when accumulate is passed', function() {
 
