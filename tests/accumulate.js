@@ -1,7 +1,28 @@
 const expect = require('chai').expect;
 const accumulate = require('../../').accumulate;
 
-describe('when accumulate is passed', function() {
+describe('[Failure Cases] when accumulate is passed', function() {
+
+  it('an invalid function, it should throw an error', function() {
+    expect(() => accumulate([], [])).to.throw(TypeError, /second argument to accumulate must be a function object/);
+  });
+
+  it('an invalid iterable (undefined), it should throw an error', function() {
+    expect(() => accumulate()).to.throw(TypeError, /first argument to accumulate must be an iterable object/);
+  });
+
+  it('an invalid iterable (null), it should throw an error', function() {
+    expect(() => accumulate()).to.throw(TypeError, /first argument to accumulate must be an iterable object/);
+  });
+
+  it('an invalid iterable (number), it should throw an error', function() {
+    expect(() => accumulate(1)).to.throw(TypeError, /first argument to accumulate must be an iterable object/);
+  });
+
+});
+
+describe('[Happy Cases] when accumulate is passed', function() {
+
   it('a valid numbers array, it should accumulate and add them by default', function() {
     expect(Array.from(accumulate([1, 2, 3]))).to.deep.equal([1, 3, 6]);
   });
