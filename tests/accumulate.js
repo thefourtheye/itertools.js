@@ -8,15 +8,15 @@ describe('[Failure Cases] when accumulate is passed', function() {
   });
 
   it('an invalid iterable (undefined), it should throw an error', function() {
-    expect(() => accumulate()).to.throw(TypeError, /not a valid iterable object undefined/);
+    expect(() => accumulate()).to.throw(TypeError, 'not a valid iterable object [Undefined]');
   });
 
   it('an invalid iterable (null), it should throw an error', function() {
-    expect(() => accumulate(null)).to.throw(TypeError, /not a valid iterable object null/);
+    expect(() => accumulate(null)).to.throw(TypeError, 'not a valid iterable object [Null]');
   });
 
   it('an invalid iterable (number), it should throw an error', function() {
-    expect(() => accumulate(1)).to.throw(TypeError, /not a valid iterable object 1/);
+    expect(() => accumulate(1)).to.throw(TypeError, 'not a valid iterable object [Number]');
   });
 
 });
