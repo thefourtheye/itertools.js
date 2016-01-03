@@ -8,15 +8,15 @@ describe('[Failure Cases] when accumulate is passed', function() {
   });
 
   it('an invalid iterable (undefined), it should throw an error', function() {
-    expect(() => accumulate()).to.throw(TypeError, 'not a valid iterable object [Undefined]');
+    expect(() => accumulate()).to.throw(TypeError, '\'Undefined\' object is not iterable');
   });
 
   it('an invalid iterable (null), it should throw an error', function() {
-    expect(() => accumulate(null)).to.throw(TypeError, 'not a valid iterable object [Null]');
+    expect(() => accumulate(null)).to.throw(TypeError, '\'Null\' object is not iterable');
   });
 
   it('an invalid iterable (number), it should throw an error', function() {
-    expect(() => accumulate(1)).to.throw(TypeError, 'not a valid iterable object [Number]');
+    expect(() => accumulate(1)).to.throw(TypeError, '\'Number\' object is not iterable');
   });
 
 });
@@ -48,11 +48,17 @@ describe('[Happy Cases] when accumulate is passed', function() {
   });
 
   it('a valid object, it should accumulate and return keys and values arrays', function() {
-    expect(Array.from(accumulate({'a': 'b'}))).to.deep.equal([['a', 'b']]);
+    expect(Array.from(accumulate({
+      'a': 'b'
+    }))).to.deep.equal([['a', 'b']]);
   });
 
   it('a valid object with more than one key, with custom function, it should accumulate keys and values', function() {
-    expect(Array.from(accumulate({'a': 'b', 'c': 'd', 'e': 'f'}, (a, b) => a.concat(b))))
+    expect(Array.from(accumulate({
+      'a': 'b',
+      'c': 'd',
+      'e': 'f'
+    }, (a, b) => a.concat(b))))
       .to.deep.equal([['a', 'b'], ['a', 'b', 'c', 'd'], ['a', 'b', 'c', 'd', 'e', 'f']]);
   });
 

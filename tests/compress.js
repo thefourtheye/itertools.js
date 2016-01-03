@@ -4,11 +4,11 @@ const compress = require('../').compress;
 describe('[Failure Cases] when compress is passed', function() {
 
   it('an invalid iterable for first argument, it should throw an error', function() {
-    expect(() => compress(null, [])).to.throw(TypeError, /not a valid iterable object \[Null\]/);
+    expect(() => compress(null, [])).to.throw(TypeError, /\'Null\' object is not iterable/);
   });
 
   it('an invalid iterable for second argument, it should throw an error', function() {
-    expect(() => compress([], null)).to.throw(TypeError, /not a valid iterable object \[Null\]/);
+    expect(() => compress([], null)).to.throw(TypeError, /\'Null\' object is not iterable/);
   });
 
   it('lesser than two arguments, it should throw an error', function() {
