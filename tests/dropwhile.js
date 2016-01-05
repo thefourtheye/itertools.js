@@ -24,3 +24,23 @@ describe('[Failure Cases] when dropwhile is passed', function() {
   });
 
 });
+
+describe('[Happy Cases] when dropwhile is passed', function() {
+
+  it('an empty iterable, it should return an empty iterable', function() {
+    expect(Array.from(dropwhile(() => 1, []))).to.deep.equal([]);
+  });
+
+  it('a valid iterable with no predicate failures should return the original items in iterable', function() {
+    expect(Array.from(dropwhile(() => false, [1, 2, 3, 4]))).to.deep.equal([1, 2, 3, 4]);
+  });
+
+  it('a valid iterable with all predicate failures should return an empty iterable', function() {
+    expect(Array.from(dropwhile(() => true, [1, 2, 3, 4]))).to.deep.equal([]);
+  });
+
+  it('a valid iterable with predicate failures should return rest of the items from the iterable', function() {
+    expect(Array.from(dropwhile((x) => x < 2, [1, 2, 3, 4]))).to.deep.equal([2, 3, 4]);
+  });
+
+});
