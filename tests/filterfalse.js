@@ -41,6 +41,7 @@ describe('[Happy Cases] when filterfalse is passed', function() {
 
   it('a valid iterable with predicate failures should return rest of the items from the iterable', function() {
     expect(Array.from(filterfalse((x) => x === 2, [1, 2, 3, 4]))).to.deep.equal([1, 3, 4]);
+    expect(Array.from(filterfalse((x) => x !== 2, [1, 2, 3, 4]))).to.deep.equal([2]);
   });
 
 });
