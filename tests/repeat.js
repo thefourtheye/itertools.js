@@ -1,6 +1,21 @@
 const expect = require('chai').expect;
 const repeat = require('../').repeat;
 
+function take(iterable, n) {
+  'use strict';
+  const result = [];
+  let counter = 0;
+  if (Number.isInteger(n) && n >= 0) {
+    for (const value of iterable) {
+      if (counter++ === n) {
+        break;
+      }
+      result.push(value);
+    }
+  }
+  return result;
+}
+
 describe('[Failure Cases] when repeat is passed', function() {
 
   it('no arguments, it should throw an error', function() {
@@ -29,6 +44,14 @@ describe('[Happy Cases] when repeat is passed', function() {
 
   it('a valid integer, it should return a valid iterable', function() {
     expect(Array.from(repeat({}, 5))).to.deep.equal([{}, {}, {}, {}, {}]);
+  });
+
+  it('nothing for n, it should return an infinite generator', function() {
+    const repeater = repeat(1);
+    expect(take(repeater, 5)).to.deep.equal([1, 1, 1, 1, 1]);
+    expect(take(repeater, 5)).to.deep.equal([1, 1, 1, 1, 1]);
+    expect(take(repeater, 5)).to.deep.equal([1, 1, 1, 1, 1]);
+    expect(take(repeater, 5)).to.deep.equal([1, 1, 1, 1, 1]);
   });
 
 });
