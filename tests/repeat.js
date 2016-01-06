@@ -20,3 +20,15 @@ describe('[Failure Cases] when repeat is passed', function() {
   });
 
 });
+
+describe('[Happy Cases] when repeat is passed', function() {
+
+  it('zero as n, it should return an empty iterable', function() {
+    expect(Array.from(repeat(() => 1, 0))).to.deep.equal([]);
+  });
+
+  it('a valid integer, it should return a valid iterable', function() {
+    expect(Array.from(repeat({}, 5))).to.deep.equal([{}, {}, {}, {}, {}]);
+  });
+
+});
