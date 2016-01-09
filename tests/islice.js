@@ -36,3 +36,23 @@ describe('[Failure Cases] when islice is passed', function() {
   });
 
 });
+
+describe('[Happy Cases] when islice is passed', function() {
+
+  it('an empty iterable, it should return an empty iterable', function() {
+    expect(Array.from(islice([], 0))).to.deep.equal([]);
+  });
+
+  it('only the start value, it should be treated as the stop value', function() {
+    expect(Array.from(islice([1, 2, 3, 4, 5, 6], 3))).to.deep.equal([1, 2, 3]);
+  });
+
+  it('only the start and the stop value, step value should be assumed to be 1', function() {
+    expect(Array.from(islice('abcdefgh', 2, 5))).to.deep.equal(['c', 'd', 'e']);
+  });
+
+  it('all start, stop and step values, it should properly slice', function() {
+    expect(Array.from(islice('abcdefgh', 2, 8, 2))).to.deep.equal(['c', 'e', 'g']);
+  });
+
+});
