@@ -55,4 +55,8 @@ describe('[Happy Cases] when islice is passed', function() {
     expect(Array.from(islice('abcdefgh', 2, 8, 2))).to.deep.equal(['c', 'e', 'g']);
   });
 
+  it('undefined as start value, it should be assumed as zero', function() {
+    expect(Array.from(islice('abcdefgh', undefined, 8, 2))).to.deep.equal(['a', 'c', 'e', 'g']);
+  });
+
 });
