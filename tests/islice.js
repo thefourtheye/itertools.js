@@ -59,4 +59,28 @@ describe('[Happy Cases] when islice is passed', function() {
     expect(Array.from(islice('abcdefgh', undefined, 8, 2))).to.deep.equal(['a', 'c', 'e', 'g']);
   });
 
+  it('undefined as stop value, it should be assumed as Infinity', function() {
+    expect(Array.from(islice('abcdefgh', 0, undefined, 2))).to.deep.equal(['a', 'c', 'e', 'g']);
+  });
+
+  it('start value greater than stop value, an empty iterable should be returned', function() {
+    expect(Array.from(islice('abcdefgh', 5, 4, 2))).to.deep.equal([]);
+  });
+
+  it('zero as stop value, an empty iterable should be returned', function() {
+    expect(Array.from(islice('abcdefgh', 0, 0, 2))).to.deep.equal([]);
+  });
+
+  it('start value same as stop value, an empty iterable should be returned', function() {
+    expect(Array.from(islice('abcdefgh', 4, 4, 2))).to.deep.equal([]);
+  });
+
+  it('step value same as the stop value, first element should be returned', function() {
+    expect(Array.from(islice('abcdefgh', 4, 6, 2))).to.deep.equal(['e']);
+  });
+
+  it('step value greater than the stop value, first element should be returned', function() {
+    expect(Array.from(islice('abcdefgh', 4, 6, 8))).to.deep.equal(['e']);
+  });
+
 });
