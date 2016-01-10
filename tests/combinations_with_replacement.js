@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 const combinations = require('../').combinations_with_replacement;
-const ValueError = require('../lib/utils').ValueError;
+const ValueError = require('valueerror');
 
 describe('[Failure Cases] when combinations is passed', function() {
 

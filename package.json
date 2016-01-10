@@ -29,5 +29,8 @@
     "eslint": "^1.10.2",
     "istanbul": "^0.4.1",
     "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "valueerror": "0.0.1"
   }
 }
