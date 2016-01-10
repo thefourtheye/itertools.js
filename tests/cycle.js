@@ -1,20 +1,6 @@
 const expect = require('chai').expect;
 const cycle = require('../').cycle;
-
-function take(iterable, n) {
-  'use strict';
-  const result = [];
-  let counter = 0;
-  if (Number.isInteger(n) && n >= 0) {
-    for (const value of iterable) {
-      if (counter++ === n) {
-        break;
-      }
-      result.push(value);
-    }
-  }
-  return result;
-}
+const take = require('./take');
 
 describe('[Failure Cases] when cycle is passed', function() {
 
