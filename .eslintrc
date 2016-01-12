@@ -4,6 +4,7 @@
         "blockBindings": 2,
         "forOf": 2,
         "generators": 2,
+        "restParams": 2,
         "templateStrings": 2
     },
     "rules": {
