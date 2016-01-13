@@ -13,7 +13,7 @@ describe('[Failure Cases] when combinations is passed', function() {
   });
 
   it('an invalid iterable, it should throw an error', function() {
-    expect(() => combinations(() => 1, 1)).to.throw(TypeError, /\'Function\' object is not iterable/);
+    expect(() => combinations(() => 1, 1)).to.throw(TypeError, /'Function' object is not iterable/);
   });
 
 });
