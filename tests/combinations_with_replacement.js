@@ -2,7 +2,7 @@ const expect = require('chai').expect;
 const combinations = require('../').combinations_with_replacement;
 const ValueError = require('valueerror');
 
-describe('[Failure Cases] when combinations is passed', function() {
+describe('[Failure Cases] when combinations_with_replacement is passed', function() {
 
   it('an invalid integer, it should throw an error', function() {
     expect(() => combinations('abcd', 'abcd')).to.throw(TypeError, /abcd cannot be interpreted as an integer/);
@@ -18,7 +18,7 @@ describe('[Failure Cases] when combinations is passed', function() {
 
 });
 
-describe('[Happy Cases] when combinations is passed', function() {
+describe('[Happy Cases] when combinations_with_replacement is passed', function() {
 
   it('an invalid number of elements (zero), it should return an empty iterable', function() {
     expect(Array.from(combinations('abcd', 0))).to.deep.equal([]);
