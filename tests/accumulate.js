@@ -47,7 +47,7 @@ describe('[Happy Cases] when accumulate is passed', function() {
   it('a valid object, it should accumulate and return keys and values arrays', function() {
     expect(Array.from(accumulate({
       'a': 'b'
-    }))).to.deep.equal([['a', 'b']]);
+    }))).to.deep.equal(['a']);
   });
 
   it('a valid object with more than one key, with custom function, it should accumulate keys and values', function() {
@@ -55,8 +55,8 @@ describe('[Happy Cases] when accumulate is passed', function() {
       'a': 'b',
       'c': 'd',
       'e': 'f'
-    }, (a, b) => a.concat(b))))
-      .to.deep.equal([['a', 'b'], ['a', 'b', 'c', 'd'], ['a', 'b', 'c', 'd', 'e', 'f']]);
+    }, (a, b) => a + b)))
+      .to.deep.equal(['a', 'ac', 'ace']);
   });
 
 });
