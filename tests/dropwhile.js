@@ -44,4 +44,8 @@ describe('[Happy Cases] when dropwhile is passed', function() {
     expect(Array.from(dropwhile((x) => x < 2, [1, 2, 3, 4]))).to.deep.equal([2, 3, 4]);
   });
 
+  it('a valid iterable with alternating data should return proper result', function() {
+    expect(Array.from(dropwhile((x) => x < 7, [1, 3, 5, 7, 5, 3, 1]))).to.deep.equal([7, 5, 3, 1]);
+  });
+
 });
