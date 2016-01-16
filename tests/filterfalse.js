@@ -19,8 +19,9 @@ describe('[Failure Cases] when filterfalse is passed', function() {
     expect(() => filterfalse(1, [])).to.throw(TypeError, '\'Number\' object is not callable');
   });
 
-  it('an invalid iterable object, it should throw an error', function() {
-    expect(() => filterfalse(() => 1, 1)).to.throw(TypeError, '\'Number\' object is not iterable');
+  it('invalid iterable objects, it should throw error', function() {
+    expect(() => filterfalse(() => 1, null)).to.throw(TypeError, '\'Null\' object is not iterable');
+    expect(() => filterfalse(() => 1, undefined)).to.throw(TypeError, '\'Undefined\' object is not iterable');
   });
 
 });

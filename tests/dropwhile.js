@@ -19,8 +19,9 @@ describe('[Failure Cases] when dropwhile is passed', function() {
     expect(() => dropwhile(1, [])).to.throw(TypeError, '\'Number\' object is not callable');
   });
 
-  it('an invalid iterable object, it should throw an error', function() {
-    expect(() => dropwhile(() => 1, 1)).to.throw(TypeError, '\'Number\' object is not iterable');
+  it('invalid iterable objects, it should throw error', function() {
+    expect(() => dropwhile(() => 1, null)).to.throw(TypeError, '\'Null\' object is not iterable');
+    expect(() => dropwhile(() => 1, undefined)).to.throw(TypeError, '\'Undefined\' object is not iterable');
   });
 
 });

@@ -3,12 +3,9 @@ const chain = require('../').chain;
 
 describe('[Failure Cases] when chain is passed', function() {
 
-  it('an invalid iterable, it should throw an error', function() {
-    expect(() => Array.from(chain(1))).to.throw(TypeError, '\'Number\' object is not iterable');
-  });
-
-  it('a function, it should throw an error', function() {
-    expect(() => Array.from(chain(() => 1))).to.throw(TypeError, '\'Function\' object is not iterable');
+  it('invalid iterables, it should throw an error', function() {
+    expect(() => Array.from(chain(null))).to.throw(TypeError, '\'Null\' object is not iterable');
+    expect(() => Array.from(chain(undefined))).to.throw(TypeError, '\'Undefined\' object is not iterable');
   });
 
 });
@@ -28,8 +25,10 @@ describe('[Happy Cases] when chain is passed', function() {
 
 describe('[Failure Cases] when chain.from_iterable is passed', function() {
 
-  it('an invalid iterable, it should throw an error', function() {
-    expect(() => Array.from(chain.from_iterable(1))).to.throw(TypeError, '\'Number\' object is not iterable');
+  it('invalid iterables, it should throw error', function() {
+    expect(() => Array.from(chain.from_iterable(null))).to.throw(TypeError, '\'Null\' object is not iterable');
+    expect(() => Array.from(chain.from_iterable(undefined)))
+    .to.throw(TypeError, '\'Undefined\' object is not iterable');
   });
 
   it('no arguments, it should throw an error', function() {
@@ -40,11 +39,6 @@ describe('[Failure Cases] when chain.from_iterable is passed', function() {
   it('more than one arguments, it should throw an error', function() {
     expect(() => Array.from(chain.from_iterable([1], [2], [3])))
       .to.throw(TypeError, 'from_iterable() takes exactly one argument (3 given)');
-  });
-
-  it('a function, it should throw an error', function() {
-    expect(() => Array.from(chain.from_iterable(() => 1)))
-      .to.throw(TypeError, '\'Function\' object is not iterable');
   });
 
 });

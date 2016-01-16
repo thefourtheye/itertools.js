@@ -12,8 +12,9 @@ describe('[Failure Cases] when combinations is passed', function() {
     expect(() => combinations('abcd', -3)).to.throw(ValueError, /r must be non-negative/);
   });
 
-  it('an invalid iterable, it should throw an error', function() {
-    expect(() => combinations(() => 1, 1)).to.throw(TypeError, /'Function' object is not iterable/);
+  it('invalid iterables, it should throw error', function() {
+    expect(() => combinations(null, 1)).to.throw(TypeError, /'Null' object is not iterable/);
+    expect(() => combinations(undefined, 1)).to.throw(TypeError, /'Undefined' object is not iterable/);
   });
 
 });

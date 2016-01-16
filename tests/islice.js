@@ -15,8 +15,9 @@ describe('[Failure Cases] when islice is passed', function() {
     expect(() => islice(1, 2, 3, 4, 5)).to.throw(TypeError, 'islice expected at most 4 arguments, got 5');
   });
 
-  it('an invalid iterable, it should throw an error', function() {
-    expect(() => islice(1, 1)).to.throw(TypeError, '\'Number\' object is not iterable');
+  it('invalid iterable objects, it should throw error', function() {
+    expect(() => islice(null, 0)).to.throw(TypeError, '\'Null\' object is not iterable');
+    expect(() => islice(undefined, 0)).to.throw(TypeError, '\'Undefined\' object is not iterable');
   });
 
   it('an invalid value for start, it should throw an error', function() {

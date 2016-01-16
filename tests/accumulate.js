@@ -7,16 +7,9 @@ describe('[Failure Cases] when accumulate is passed', function() {
     expect(() => accumulate([], [])).to.throw(TypeError, /second argument to accumulate must be a function object/);
   });
 
-  it('an invalid iterable (undefined), it should throw an error', function() {
+  it('invalid iterables, it should throw error', function() {
     expect(() => accumulate()).to.throw(TypeError, '\'Undefined\' object is not iterable');
-  });
-
-  it('an invalid iterable (null), it should throw an error', function() {
     expect(() => accumulate(null)).to.throw(TypeError, '\'Null\' object is not iterable');
-  });
-
-  it('an invalid iterable (number), it should throw an error', function() {
-    expect(() => accumulate(1)).to.throw(TypeError, '\'Number\' object is not iterable');
   });
 
 });
@@ -29,6 +22,10 @@ describe('[Happy Cases] when accumulate is passed', function() {
 
   it('a valid strings array, it should accumulate and concatenate them by default', function() {
     expect(Array.from(accumulate(['a', 'b', 'c']))).to.deep.equal(['a', 'ab', 'abc']);
+  });
+
+  it('an invalid iterable (number), should return an empty iterable', function() {
+    expect(Array.from(accumulate(1))).to.deep.equal([]);
   });
 
   it('a valid empty array, it should return an empty iterable', function() {

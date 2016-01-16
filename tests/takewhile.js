@@ -19,8 +19,9 @@ describe('[Failure Cases] when takewhile is passed', function() {
     expect(() => takewhile(1, [])).to.throw(TypeError, '\'Number\' object is not callable');
   });
 
-  it('an invalid iterable object, it should throw an error', function() {
-    expect(() => takewhile(() => 1, 1)).to.throw(TypeError, '\'Number\' object is not iterable');
+  it('invalid iterables, it should throw error', function() {
+    expect(() => takewhile(() => 1, null)).to.throw(TypeError, '\'Null\' object is not iterable');
+    expect(() => takewhile(() => 1, undefined)).to.throw(TypeError, '\'Undefined\' object is not iterable');
   });
 
 });
