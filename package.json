@@ -31,6 +31,6 @@
     "mocha": "^2.3.4"
   },
   "dependencies": {
-    "valueerror": "0.0.1"
+    "valueerror": "0.0.2"
   }
 }
