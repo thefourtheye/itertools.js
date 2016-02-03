@@ -28,7 +28,8 @@
     "coveralls": "^2.11.4",
     "eslint": "^1.10.2",
     "istanbul": "^0.4.1",
-    "mocha": "^2.3.4"
+    "mocha": "^2.3.4",
+    "sane-generator": "0.0.1"
   },
   "dependencies": {
     "valueerror": "0.0.2"
