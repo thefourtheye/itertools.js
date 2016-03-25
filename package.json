@@ -25,7 +25,7 @@
   "homepage": "https://github.com/thefourtheye/itertools.js#readme",
   "devDependencies": {
     "chai": "^3.4.1",
-    "coveralls": "^2.11.7",
+    "coveralls": "^2.11.9",
     "eslint": "^2.4.0",
     "istanbul": "^0.4.1",
     "mocha": "^2.3.4",
