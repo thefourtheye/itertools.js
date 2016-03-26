@@ -1,12 +1,4 @@
 {
-    "ecmaFeatures": {
-        "arrowFunctions": 2,
-        "blockBindings": 2,
-        "forOf": 2,
-        "generators": 2,
-        "restParams": 2,
-        "templateStrings": 2
-    },
     "rules": {
         "no-console": 0,
         "indent": [ 2, 2 ],
@@ -17,8 +9,9 @@
         "max-len": [2, 120, 4]
     },
     "env": {
-        "node": true,
-        "mocha": true
+        "es6": true,
+        "mocha": true,
+        "node": true
     },
     "extends": "eslint:recommended"
 }
