@@ -26,7 +26,7 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "coveralls": "^2.11.9",
-    "eslint": "^2.7.0",
+    "eslint": "^2.8.0",
     "istanbul": "^0.4.1",
     "mocha": "^2.3.4",
     "sane-generator": "0.0.1"
